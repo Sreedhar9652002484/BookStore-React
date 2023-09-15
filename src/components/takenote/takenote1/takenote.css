@@ -1,0 +1,51 @@
+.card{
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: box-shadow 0.3s ease;
+    
+}
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent #ccc; /* Restore border on hover if needed */
+  }
+.namediv{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;
+}
+#img1{
+    height: 22vh;
+    width: 8vw;
+    margin-bottom: 1vh;
+}
+#title{
+    margin-top: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+#spantext{
+    font-size: 0.8rem;
+    color: gray;
+    margin-top: 0;
+   
+}
+#star{
+    width: 2.7vw;
+    margin-top: 0;
+    color: white;
+    font-size: 0.8rem;
+    background-color: green;
+    text-align: center;
+}
+#price{
+    margin-top: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+#rate{
+    color: gray;
+    font-weight: normal;
+    text-decoration: line-through;
+}
