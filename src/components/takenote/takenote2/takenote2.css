@@ -1,10 +1,34 @@
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
 .maincontainer{
     /* background-color: aqua; */
     height:auto;
     width: 75vw;
     display: flex;
     flex-direction: row;
-
+    /* background-color: aqua; */
+    margin-top: 5vh;
+}
+.homelink{
+    margin-top: 12vh;
+    position: relative;
+    right: 33vw;
+    cursor: pointer;
+    
+}
+.book1{
+    padding: 1.5vh;
+    border: 1px solid gray;
+    height: 8vh;
+}
+#book1{
+    height: 8vh;
 }
 .geeta{
    
@@ -57,10 +81,9 @@
     font-size: 1.2rem;
     color: gray;
     margin-top: 0;
-   
 }
 #star1{
-    width: 3vw;
+    width: 4vw;
     margin-top: 0;
     color: white;
     font-size: 1.1rem;
@@ -79,5 +102,70 @@
     text-decoration: line-through;
 }
 #line{
-    width: 50vw;
+    width: 45vw;
+}
+#bookdetail{
+    color: gray;
+    font-size: 1.2rem;
+}
+#bookpara{
+    font-size:medium;
+}
+.rating{
+    padding: 1vw;
+    background-color: #f9f9f9;
+}
+#overall{
+    font-size: medium;
+    font-weight: 600;
+}
+#star2{
+    
+    letter-spacing: 1.5vw;
+    color: gray;
+}
+#review{
+    width: 41vw;
+    height: 8vh;
+}
+input{
+    background-color:white;
+    border: none;
+}
+input::placeholder{
+    font-size: 1.2rem;
+
+}
+.buttondiv{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2vh;
+    margin-right: 2vw;    
+}
+#reviewbutton{
+    width:5vw;
+    height: 4vh;
+    color:white;
+    border-radius: 2px;
+    background-color: #3371b5;
+    border: none;
+    cursor: pointer;
+}
+.star3{
+    display: flex;
+    flex-direction: column;
+    color:#ffce00;
+    position:relative;
+    left: 3vw;
+}
+.avatar{
+    display: flex;  
+    
+}
+#iconavatar{
+    position: relative;
+}
+
+#grey{ 
+   color: gray;
 }

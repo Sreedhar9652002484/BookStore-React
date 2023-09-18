@@ -12,6 +12,7 @@ export class Signin extends Component {
     }
     render() {
         return (
+            <div className="body">
             <div className="MainContainer">
                 <div className="image">
                     <img id="image" src={image} alt="logo" />
@@ -41,6 +42,7 @@ export class Signin extends Component {
                     </div>
                 </form>
 
+            </div>
             </div>)
     }
 }

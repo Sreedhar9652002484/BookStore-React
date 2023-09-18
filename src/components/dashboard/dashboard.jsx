@@ -1,7 +1,8 @@
 import ForgetPassword from "../../pages/forgetpassword/forgetpassword"
 import Navbar from "../navbar/navbar"
 import BookCard from "../takenote/takenote1/takenote"
-import { TakeNote2 } from "../takenote/takenote2/takenote2"
+import { BookDetails, TakeNote2 } from "../takenote/takenote2/takenote2"
+import { Cart } from "../takenote/takenote3/takenote3"
 
 
 export const Dashboard =()=>{
@@ -18,7 +19,8 @@ const notes =()=>{
             <Navbar/>
             {/* <BookCard/> */}
             {/* <ForgetPassword/> */}
-            <TakeNote2/>
+            <BookDetails/>
+            {/* <Cart/> */}
 
         </div>
 

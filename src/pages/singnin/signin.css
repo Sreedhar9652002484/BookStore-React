@@ -1,12 +1,12 @@
-body{
+.body{
     margin: 0 auto;
-    width:100%;
+    width:99vw;
     height:100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* background-color:rgba(101, 98, 98, 0.627); */
+    background-color:rgba(101, 98, 98, 0.627);
 }
 .MainContainer{
     width: auto;
