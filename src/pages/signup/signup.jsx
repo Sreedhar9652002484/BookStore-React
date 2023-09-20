@@ -1,13 +1,13 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import '../signup/signup.css'
 import image from '../../assests/bookStoreLoginLogo.png';
 import TextField from '@mui/material/TextField';
 import { Link } from "react-router-dom";
 
 
-export class Signup extends Component {
+export const Signup=()=>{
 
-        state={
+        const [user, setUser]=useState({
             fullname:'',
             isfullname:false,
             email:'',
@@ -16,36 +16,35 @@ export class Signup extends Component {
             ispassword:false,
             mobile:'',
             ismobile:false
-        }
+        })
     
-    handleName=(event)=>{
+    const handleName=(event)=>{
         const newvalue=event.target.value;
-        this.setState({fullname:newvalue});
+        setUser({fullname:newvalue});
     }
-    handleEmail=(event)=>{
+   const  handleEmail=(event)=>{
         const newvalue = event.target.value;
-        this.setState({email:newvalue})
+        setUser({email:newvalue})
 
     }
-    hanldePassword=(event)=>{
+    const hanldePassword=(event)=>{
         const newvalue = event.target.value;
-        this.setState({password:newvalue})
+        setUser({password:newvalue})
 
     }
-    handleMobile=(event)=>{
+    const handleMobile=(event)=>{
         const newvalue = event.target.value;
-        this.setState({mobile:newvalue})
+        setUser({mobile:newvalue})
     }
 
-     isFNameValid = /^[a-zA-Z ]{2,30}$/;
-    isEmailValid = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/;
-    isPassValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    isMobilevalid=/^[6-9]\d{9}$/;
+    const isFNameValid = /^[a-zA-Z ]{2,30}$/;
+    const isEmailValid = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/;
+    const isPassValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const isMobilevalid=/^[6-9]\d{9}$/;
 
-    handleSubmit=(event)=>{
-        this.setState({isfullname:this.isFNameValid.test(this.firstname)})
+   const handleSubmit=(event)=>{
+        setUser({isfullname:this.isFNameValid.test(this.firstname)})
     }
-    render() {
         return (
             <div className="body">
             <div className="MainContainer">
@@ -56,25 +55,25 @@ export class Signup extends Component {
                 <form className="formcontainer">
                     <div className="form">
                         
-                        {/* <div className="top-links">
-                            <Link to="/">LOGIN</Link>
+                        <div className="top-links">
+                            {/* <Link to="/">LOGIN</Link> */}
                             <Link to={'/'}>LOGIN</Link>                          
                             <span className="link-divider"></span>
                             <Link to={'signup'}>SIGNUP</Link>
-                        </div > */}
+                        </div >
                         <div className="form-inputs">
                         <div className="label">
-                            Full Name<TextField id="outlined-basic"  type="text" onChange={this.handleName} /></div>
+                            Full Name<TextField id="outlined-basic"  type="text" onChange={handleName} /></div>
 
-                        <div className="label">Email Id<TextField id="outlined-basic" type="text" onChange={this.handleEmail} /></div>
-                        <div  className="label">Password<TextField id="outlined-basic" type="password" onChange={this.hanldePassword}/></div>
-                        <div  className="label">Mobile Number<TextField id="outlined-basic" type="text" onChange={this.handleMobile}/></div>
-                        <div  className="label"><button id="submit" onClick={this.handleSubmit}>Signup</button></div>
+                        <div className="label">Email Id<TextField id="outlined-basic" type="text" onChange={handleEmail} /></div>
+                        <div  className="label">Password<TextField id="outlined-basic" type="password" onChange={hanldePassword}/></div>
+                        <div  className="label">Mobile Number<TextField id="outlined-basic" type="text" onChange={handleMobile}/></div>
+                        <div  className="label"><button id="submit" onClick={handleSubmit}>Signup</button></div>
                     </div>
                     </div>
                 </form>
 
             </div>
-            </div>)
-    }
+    </div>)
+    
 }

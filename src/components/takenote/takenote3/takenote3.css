@@ -11,53 +11,42 @@
     right: 24vw;  
 }
 .mycart{
-
-    /* background-color: aqua; */
     width: 55vw;
     height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 1px solid gray;
-
 }
 #mycarttext{
     font-size: 1.5rem;
     font-weight: 600;
-
 }
 .locdiv{
     height: 70%;
-    /* background-color: blanchedalmond; */
     display: flex;
     justify-content: left;
     align-items: center;
     width: 30%;
     border: 1px solid gray;
-    
 }
 .location{
     width: 100%;
     height: 20%;
     position: relative;
     bottom: 3vh;
-    /* background-color: azure; */
     display: flex;
     flex-direction: row;
 align-items: center;
     justify-content: center;
     gap: 27vw;
-
 }
 .buttonimg{
     display: flex;
-    /* background-color: bisque; */
     width: 50%;
     height: 50%;
     justify-content: center;
-    align-items: center;
-    /* justify-content: space-between; */
-    
+    align-items: center;    
 }
 #imgcart{
     height: 20vh;
@@ -67,11 +56,9 @@ align-items: center;
 }
 .geetacart{
     display: flex;
-
 }
 .avatar{
     display: flex;
-    /* background-color: azure; */
 }
 input{
     width: 3vw;    
@@ -101,7 +88,6 @@ input{
     text-decoration: line-through;
     color: gray;
     font-size: 0.8rem;
-
 }
 #remove{
     background-color: white;
@@ -135,7 +121,6 @@ input{
     width: 55vw;
     height: 10vh;
     text-align: left;
-
 }
 #address{
     position: relative;

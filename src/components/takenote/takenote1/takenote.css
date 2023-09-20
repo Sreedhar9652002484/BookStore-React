@@ -1,8 +1,28 @@
+.cardmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.maincard{
+    width: 80%;
+    height: auto;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:15vh;
+}
 .card{
     cursor: pointer;
     border: 1px solid transparent;
     transition: box-shadow 0.3s ease;
-    
+    display: flex;   
+    justify-content: center;
+    align-items: center;
 }
 .card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

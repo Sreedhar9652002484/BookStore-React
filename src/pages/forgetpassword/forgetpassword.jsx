@@ -7,10 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { TextField } from '@mui/material';
 import cssstyle from  '../forgetpassword/forgetpassword.css'
+import { Link } from 'react-router-dom';
 
 export default function ForgetPassword() {
   return (
-    <div>
+    <div className='forgetpass'>
         <p id='forget'>Forget Your Password?</p>
        
     <Card sx={{ maxWidth: 350, height:320, backgroundColor:'#f8f6f6' }}>
@@ -30,7 +31,7 @@ export default function ForgetPassword() {
       </div>
       
       <CardActions className='create'> 
-        <Button id="createacc">CREATE ACCOUNT</Button>
+        <Link to="/signup" id="createacc">CREATE ACCOUNT</Link>
       </CardActions>
     </Card>
     </div>

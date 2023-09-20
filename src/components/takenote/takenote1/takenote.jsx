@@ -8,12 +8,22 @@ import Typography from '@mui/material/Typography';
 import img from '../../../assests/bhagavadbook.jpeg'
 import cssstyle from '../takenote1/takenote.css'
 import { grey } from '@mui/material/colors';
+import { BookDetails } from '../takenote2/takenote2';
 
 export default function BookCard() {
+  const [bookDetail, setBook]=React.useState(false)
+  
+  const handleOnclick=()=>{
+    setBook(!bookDetail)
+  }
+
+
   return (
-    <div className='card'>
-    <Card sx={{ maxWidth: 280, maxHeight:335, backgroundColor:'#f5f5f5'}}>
-      <CardMedia
+    <div className='cardmain'> {bookDetail?<BookDetails prop={bookDetail}/>:""}
+    <div className='maincard'>
+    <div className='card' >
+    <Card sx={{ maxWidth: 300, maxHeight:335, backgroundColor:'#f5f5f5'}} onClick={handleOnclick}>
+      <CardMedia 
         sx={{ height: 10}}
         // image="D:\ReactProject\BookStore\BookStore-React\bookstore\src\assests\BookLogo.png"
     
@@ -33,6 +43,8 @@ export default function BookCard() {
       </div>
       
     </Card>
+    </div>
+    </div>
     </div>
   );
 }

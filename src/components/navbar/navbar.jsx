@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { AppBar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { AccountCircle, Person3Outlined, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
+import { Cart } from '../takenote/takenote3/takenote3';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -68,11 +69,17 @@ export default function Navbar() {
           navigate("/");
         }
       }
+
+      const [cart, setCart]=React.useState(false)
+      const handlecart=()=>{
+        setCart(true)
+      }
     
     return (
         <div className='main'>
+          {cart?<Cart/>:''}
         <Box  >
-          <AppBar >
+          <AppBar style={{display:'fixed'}}>
             <Toolbar className='appbar'>
               <Typography id='typo'
                 variant="h6"
@@ -132,7 +139,8 @@ export default function Navbar() {
                 <MenuItem onClick={SignoutHandler}>SignOut</MenuItem>
               </Menu>
               <div  className='cart'>
-              <IconButton id='icon'> <ShoppingCartOutlined/></IconButton>
+              <IconButton id='icon'  > <ShoppingCartOutlined   onClick={handlecart} /></IconButton>
+              
               <span id='cart'> Cart</span> 
               </div>
              

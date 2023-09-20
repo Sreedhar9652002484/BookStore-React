@@ -1,0 +1,98 @@
+.customermain{
+    display: flex;
+    justify-content: center;
+}
+.customer{
+    /* background-color: aqua; */
+    width: 55vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    /* padding: 1.5vw; */
+    border: 1px solid black;
+    position: relative;
+    top: 10vh;
+}
+.customerbutton{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    top:1vh;
+}
+#customer{
+    position: relative;
+    left: 2.5vw;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+#addressbutton{
+    position: relative;
+    right: 2.5vw;
+    width: 10vw;
+    height: 5vh;
+    color: #a03037;
+    border-radius: 3px;
+    border-color: #a03037;
+    background-color:white;
+}
+.customerform{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     gap: 1rem;
+    /* background-color: aliceblue; */
+    position: relative;
+    left: 2vw;
+}
+.text1{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.nametext{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+#input1{
+    width: 15vw;
+}
+#input3{
+    width: 32vw;
+    height: 8vh;
+}
+.label1{
+    text-align: left;
+    position: relative;
+    left:2.5vw;
+}
+.Radio{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 1.8rem;
+    position: relative;
+    right: 1vw;
+}
+.type{
+    text-align: left;
+    position: relative;
+    left: 2.5vw;
+}
+#home{
+   position: relative;
+   top: 2vh;
+   right: 1.8vw;
+}
+.continue{
+    text-align: right;
+    position: relative;
+    right: 2.5vw;
+}
+#continue{
+    background-color: #3371b5;
+    color: white;
+    width: 10vw;
+}

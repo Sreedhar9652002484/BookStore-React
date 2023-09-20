@@ -1,12 +1,12 @@
-import {Avatar, Button, Icon, IconButton, Link, TextField, Typography } from '@mui/material'
+import {Avatar, Button, Icon, IconButton,TextField, Typography } from '@mui/material'
 import image from '../../../assests/bhagavadbook.jpeg'
 import csss from'../takenote2/takenote2.css'
-export const BookDetails = () => {
+import { Link } from 'react-router-dom'
+export const BookDetails = (prop) => {
     return (
 
-
         <><div className='homelink'>
-        <Link>Home / </Link>
+        <Link onClick={prop} to='/dashboard'>Home / </Link>
         <Link >Book(01)</Link>
     </div>
     <div className='flex'>

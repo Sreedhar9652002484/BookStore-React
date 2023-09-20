@@ -5,12 +5,8 @@ import TextField from '@mui/material/TextField';
 import { Link } from "react-router-dom";
 
 
-export class Signin extends Component {
-    constructor(props) {
-        super(props)
-
-    }
-    render() {
+export const Signin=()=> {
+   
         return (
             <div className="body">
             <div className="MainContainer">
@@ -20,16 +16,16 @@ export class Signin extends Component {
                 </div>
                 <form className="formcontainer">
                     <div className="form">
-                        {/* <div className="top-links">
+                        <div className="top-links">
                             <Link to="/">LOGIN</Link>
                             <span className="link-divider"></span>
                             <Link to="/signup">SIGNUP</Link>
-                        </div > */}
+                        </div >
                         <div className="form-inputs">
                 
                         <div className="label">Email Id<TextField id="outlined-basic" type="text" /></div>
                         <div  className="label">Password<TextField id="outlined-basic" type="password" />
-                        {/* <Link sx={{textAlign:'right', textDecoration:'none', color:'gray', fontSize:'0.9rem'}} to="/signup">Forget Password?</Link> */}
+                        <Link sx={{textAlign:'right', textDecoration:'none', color:'gray', fontSize:'0.9rem'}} to="/forgetpassword">Forget Password?</Link>
                         </div>
                         <div  id="outlined-basic"><button id="submit">Signup</button></div>
                         <span>----------- OR ------------</span>
@@ -44,5 +40,5 @@ export class Signin extends Component {
 
             </div>
             </div>)
-    }
+    
 }
