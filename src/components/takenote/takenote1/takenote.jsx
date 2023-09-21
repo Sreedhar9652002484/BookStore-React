@@ -9,17 +9,20 @@ import img from '../../../assests/bhagavadbook.jpeg'
 import cssstyle from '../takenote1/takenote.css'
 import { grey } from '@mui/material/colors';
 import { BookDetails } from '../takenote2/takenote2';
+import { useNavigate } from 'react-router-dom';
 
 export default function BookCard() {
-  const [bookDetail, setBook]=React.useState(false)
   
+  const navigate=useNavigate()
   const handleOnclick=()=>{
-    setBook(!bookDetail)
+    navigate('/bookdetails')
+   
   }
 
 
   return (
-    <div className='cardmain'> {bookDetail?<BookDetails prop={bookDetail}/>:""}
+    <div className='cardmain'>    
+
     <div className='maincard'>
     <div className='card' >
     <Card sx={{ maxWidth: 300, maxHeight:335, backgroundColor:'#f5f5f5'}} onClick={handleOnclick}>
@@ -45,6 +48,9 @@ export default function BookCard() {
     </Card>
     </div>
     </div>
+   
     </div>
+    
+    
   );
 }

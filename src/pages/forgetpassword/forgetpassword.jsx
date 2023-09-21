@@ -8,9 +8,13 @@ import Typography from '@mui/material/Typography';
 import { TextField } from '@mui/material';
 import cssstyle from  '../forgetpassword/forgetpassword.css'
 import { Link } from 'react-router-dom';
+import NavbarForget from './forgetnavbar';
 
 export default function ForgetPassword() {
   return (
+    <div className='mainforget'>
+    <div className='forgetdiv'>
+      <NavbarForget/>
     <div className='forgetpass'>
         <p id='forget'>Forget Your Password?</p>
        
@@ -34,6 +38,8 @@ export default function ForgetPassword() {
         <Link to="/signup" id="createacc">CREATE ACCOUNT</Link>
       </CardActions>
     </Card>
+    </div>
+    </div>
     </div>
    
   );

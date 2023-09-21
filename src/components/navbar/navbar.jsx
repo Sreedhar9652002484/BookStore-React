@@ -62,22 +62,23 @@ export default function Navbar() {
         setAnchorEl(event.currentTarget);
       };
     
-      const navigate = useNavigate;
+      const navigate = useNavigate();
       const SignoutHandler=()=>{
-        if(localStorage.key){
-          localStorage.removeItem('token');
-          navigate("/");
-        }
+        // if(localStorage.key){
+        //   localStorage.removeItem('token');
+          navigate('/')
+        //}
       }
-
-      const [cart, setCart]=React.useState(false)
+      const navigatecart=useNavigate();
       const handlecart=()=>{
-        setCart(true)
+        navigatecart('/cart')
       }
-    
+      const handlebook=()=>{
+        navigatecart('/dashboard')
+      }
     return (
         <div className='main'>
-          {cart?<Cart/>:''}
+         
         <Box  >
           <AppBar style={{display:'fixed'}}>
             <Toolbar className='appbar'>
@@ -86,9 +87,9 @@ export default function Navbar() {
                 noWrap
                 sx={{ display: { xs: 'none', sm: 'block' } }}
               >
-                <div className='booklogo'>
+                <div className='booklogo'  onClick={handlebook}>
                 <img id='image1' src={Logo} alt='logo'></img>
-                <p id='textbook'>Bookstore</p>
+                <p id='textbook' >Bookstore</p>
                 </div>
                 
               </Typography>
@@ -139,7 +140,7 @@ export default function Navbar() {
                 <MenuItem onClick={SignoutHandler}>SignOut</MenuItem>
               </Menu>
               <div  className='cart'>
-              <IconButton id='icon'  > <ShoppingCartOutlined   onClick={handlecart} /></IconButton>
+              <IconButton id='icon' onClick={handlecart} > <ShoppingCartOutlined    /></IconButton>
               
               <span id='cart'> Cart</span> 
               </div>
@@ -149,6 +150,8 @@ export default function Navbar() {
       </AppBar>
       
     </Box>
+       
+       
     </div>
     );
 }

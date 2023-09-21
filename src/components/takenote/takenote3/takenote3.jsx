@@ -1,13 +1,26 @@
 import { LocalActivityOutlined, LocationOnOutlined } from "@mui/icons-material"
-import { Avatar, IconButton, Link } from "@mui/material"
+import { Avatar, IconButton } from "@mui/material"
 import image from '../../../assests/bhagavadbook.jpeg'
 import stylecss from '../takenote3/takenote3.css'
+import { Link } from "react-router-dom"
+import { useState } from "react"
+import { CustomerDetails } from "../takenote4/takenote4"
+import { OrderSummary } from "../takenote5/takenote5"
 
 export const Cart=()=>{
+
+    const [address, setAddress]=useState(false)
+    const handleplaceOrder=()=>{
+        setAddress(true);
+    }
+    const[closeorder, setClose]=useState(false)
+    const handleordersummary=(data)=>{ 
+        setClose(data)
+    }
     return(
         <div className="cart">
-            <div className="link1">
-                <Link>Home</Link>
+            <div className="link1"> 
+                <Link to='/dashboard' >Home</Link>
                 <Link> / My Cart</Link>
             </div>
 
@@ -27,16 +40,21 @@ export const Cart=()=>{
                 </div>
                
                 </div>
-                <div ><button id="placebutton">PLACE ORDER</button></div>
+                <div onClick={handleplaceOrder}><button id="placebutton">PLACE ORDER</button></div>
                 
             
             </div>
-            <div className="address">
+            {address?(<CustomerDetails handleordersummary={handleordersummary}  />):(
+            <div className="address"> 
                 <p id="address">Address Details</p>
+               
             </div>
+            )}
+            {closeorder?(<OrderSummary/>):(
             <div className="order">
                 <p id="order">Order Summary</p>
             </div>
+             )}
         </div>
     )
 }

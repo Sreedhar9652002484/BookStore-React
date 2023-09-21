@@ -20,7 +20,7 @@ const notes =()=>{
     return(
         <div>
             <Navbar/>
-            {/* <BookCard/> */}
+            <BookCard/>
             {/* <ForgetPassword/> */}
             {/* <BookDetails/> */}
             {/* <Cart/> */}

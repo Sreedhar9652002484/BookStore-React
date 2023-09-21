@@ -141,4 +141,17 @@
     }
 
  }
-
+.forgetlink{
+    text-align: right;
+}
+#forget1{
+    text-decoration: none;
+    color: grey;
+}
+.hrtag{
+    display: flex;
+}
+hr{
+   width: 5vw;
+   height: 0vh;
+}

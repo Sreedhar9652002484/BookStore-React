@@ -3,11 +3,18 @@ import { Avatar, IconButton, Link } from "@mui/material"
 import image from '../../../assests/bhagavadbook.jpeg'
 import stylecss from '../takenote3/takenote3.css'
 import style from '../takenote5/takenote5.css'
+import { useNavigate } from "react-router-dom"
 
 export const OrderSummary=()=>{
+
+    const navigate=useNavigate();
+    const handleCheckout=()=>{
+        navigate('/ordersuccessful')
+
+    }
     return(
-        <div className="cart">
-            <div className="link1">              
+        <div className="cart1">
+            <div className="link2">              
             </div>
             <div className="mycart">
                 <div className="location3"><p id="mycarttext2">Order Summary</p>
@@ -23,7 +30,7 @@ export const OrderSummary=()=>{
                 </div>
                
                 </div>
-                <div ><button id="placebutton">CHECKOUT</button></div>
+                <div ><button onClick={handleCheckout} id="placebutton">CHECKOUT</button></div>
                 </div>
         </div>
     )

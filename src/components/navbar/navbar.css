@@ -18,6 +18,7 @@
 }
 .booklogo{
     display: flex;
+    cursor: pointer;
     
 }
 .profile{

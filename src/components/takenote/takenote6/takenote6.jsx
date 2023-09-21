@@ -1,8 +1,14 @@
 import { Button } from '@mui/material'
 import orderimage from '../../../assests/OrderSuccessful.png'
 import css from '../takenote6/takenote6.css'
+import { useNavigate } from 'react-router-dom'
 
 export const OrderSuccessful = () => {
+
+    const navigate=useNavigate();
+    const hanldeShopping=()=>{
+        navigate('/dashboard')
+    }
     return (
         <div className='ordersuccesful'>
             <div>
@@ -35,7 +41,7 @@ export const OrderSuccessful = () => {
                 </table>
             </div>
 
-            <Button id='shopbutton'>Continue Shopping</Button>
+            <Button id='shopbutton' onClick={hanldeShopping}>Continue Shopping</Button>
 
         </div>
     )

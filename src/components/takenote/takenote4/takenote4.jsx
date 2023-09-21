@@ -1,7 +1,14 @@
+import { useState } from 'react'
 import css from '../takenote4/takenote4.css'
 import { Button, IconButton, Radio, TextField } from "@mui/material"
+import { OrderSummary } from '../takenote5/takenote5';
 
-export const CustomerDetails=()=>{
+export const CustomerDetails=({handleordersummary})=>{
+const[order, setOrder]=useState(false);
+const handleContinue=()=>{
+    setOrder(true);
+    handleordersummary(order)
+}
     return(
         <div className='customermain'>
         <div className="customer">
@@ -24,17 +31,19 @@ export const CustomerDetails=()=>{
             <div className='nametext'>State
             <TextField type="text" id="input1"></TextField></div>
             </div>
-
             <div className='type'><label>Type</label>
             <div className='Radio'><IconButton><Radio></Radio></IconButton><span id='home'>Home</span>
             <IconButton><Radio></Radio></IconButton><span id='home'>Work</span> 
             <IconButton><Radio></Radio></IconButton><span id='home'>Other</span></div>     
             </div>
             </div>
-            <div className='continue'>
-                <Button id='continue'>Continue</Button>
+            <div className='continue' > 
+                <Button onClick={handleContinue} id='continue'>Continue</Button>
+                
             </div>
+              
         </div>
+             
         </div>
     )
 }
