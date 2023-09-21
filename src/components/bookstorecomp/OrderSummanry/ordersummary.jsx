@@ -1,8 +1,8 @@
 import { LocalActivityOutlined, LocationOnOutlined } from "@mui/icons-material"
 import { Avatar, IconButton, Link } from "@mui/material"
 import image from '../../../assests/bhagavadbook.jpeg'
-import stylecss from '../takenote3/takenote3.css'
-import style from '../takenote5/takenote5.css'
+import stylecss from '../Cart/cart.css'
+import style from './ordersummary.css'
 import { useNavigate } from "react-router-dom"
 
 export const OrderSummary=()=>{

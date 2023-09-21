@@ -1,11 +1,11 @@
 import { LocalActivityOutlined, LocationOnOutlined } from "@mui/icons-material"
 import { Avatar, IconButton } from "@mui/material"
 import image from '../../../assests/bhagavadbook.jpeg'
-import stylecss from '../takenote3/takenote3.css'
+import stylecss from './cart.css'
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import { CustomerDetails } from "../takenote4/takenote4"
-import { OrderSummary } from "../takenote5/takenote5"
+import { CustomerDetails } from "../CustomerDetails/customerdetails"
+import { OrderSummary } from "../OrderSummanry/ordersummary"
 
 export const Cart=()=>{
 
@@ -35,7 +35,7 @@ export const Cart=()=>{
                     <p id="bookname">Bhagavadh Geeta</p>
                     <p id="author">by Bhakthi Vedant Swami Prabhupada</p>
                     <p id='price3'>Rs.499 < span id='rate2'>Rs.699</span></p>
-                    <div className="avatar"><Avatar>-</Avatar><input id="input2"></input><Avatar>+</Avatar> <button id="remove">Remove</button></div>
+                    {/* <div className="avatar"><Avatar>-</Avatar><input id="input2"></input><Avatar>+</Avatar> <button id="remove">Remove</button></div> */}
                     </div>
                 </div>
                

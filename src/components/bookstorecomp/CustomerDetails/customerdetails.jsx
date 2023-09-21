@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import css from '../takenote4/takenote4.css'
+import css from './customerdetails.css'
 import { Button, IconButton, Radio, TextField } from "@mui/material"
-import { OrderSummary } from '../takenote5/takenote5';
+import { OrderSummary } from '../OrderSummanry/ordersummary';
 
 export const CustomerDetails=({handleordersummary})=>{
 const[order, setOrder]=useState(false);

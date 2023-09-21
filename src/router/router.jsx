@@ -4,10 +4,10 @@ import { Signup } from "../pages/signup/signup";
 import { Dashboard } from "../components/dashboard/dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ForgetPassword from "../pages/forgetpassword/forgetpassword";
-import { BookDetails } from "../components/takenote/takenote2/takenote2";
+import { BookDetails } from '../components/bookstorecomp/BookDetails/bookdetails.jsx';
 import { NavbarLayout } from "../components/navbar/navbarlayout";
-import { Cart } from "../components/takenote/takenote3/takenote3";
-import { OrderSuccessful } from "../components/takenote/takenote6/takenote6";
+import { Cart } from "../components/bookstorecomp/Cart/cart.jsx";
+import { OrderSuccessful } from "../components/bookstorecomp/OrderSuccessful/ordersuccessful";
 
 
 export const Router=()=>{

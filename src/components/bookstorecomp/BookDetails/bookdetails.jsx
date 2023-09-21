@@ -1,6 +1,6 @@
 import {Avatar, Button, Icon, IconButton,TextField, Typography } from '@mui/material'
 import image from '../../../assests/bhagavadbook.jpeg'
-import csss from'../takenote2/takenote2.css'
+import csss from'./bookdetails.css'
 import { Link } from 'react-router-dom'
 export const BookDetails = () => {
     return (

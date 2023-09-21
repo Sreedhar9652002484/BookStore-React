@@ -6,9 +6,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import img from '../../../assests/bhagavadbook.jpeg'
-import cssstyle from '../takenote1/takenote.css'
+import cssstyle from '../BookCard/bookcard.css'
 import { grey } from '@mui/material/colors';
-import { BookDetails } from '../takenote2/takenote2';
 import { useNavigate } from 'react-router-dom';
 
 export default function BookCard() {
@@ -18,7 +17,6 @@ export default function BookCard() {
     navigate('/bookdetails')
    
   }
-
 
   return (
     <div className='cardmain'>    

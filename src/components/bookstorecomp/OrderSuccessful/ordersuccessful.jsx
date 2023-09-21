@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import orderimage from '../../../assests/OrderSuccessful.png'
-import css from '../takenote6/takenote6.css'
+import css from './ordersuccessful.css'
 import { useNavigate } from 'react-router-dom'
 
 export const OrderSuccessful = () => {

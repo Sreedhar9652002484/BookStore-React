@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { AppBar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { AccountCircle, Person3Outlined, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
-import { Cart } from '../takenote/takenote3/takenote3';
+import { Cart } from '../bookstorecomp/Cart/cart';
 
 
 const Search = styled('div')(({ theme }) => ({
