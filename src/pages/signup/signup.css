@@ -43,7 +43,7 @@
    position: relative;
    right: 1.5vw;
     width: 27vw;
-    height: 65vh;
+    height: auto;
     background-color: #f8f6f6;
     display: flex;
     flex-direction: column;
@@ -60,8 +60,9 @@
   }
   .top-links a {
     font-size: larger; 
-    text-decoration: none; 
-    color: #000; 
+    /* text-decoration: none;  */
+    /* color: #000;  */
+    
     font-weight: bold;
     font-family: sans-serif;
   }
@@ -89,6 +90,9 @@
     color: #f8f6f6;
     font-size: large;
     border-radius: 5px;
+    position: relative;
+
+  
 }
  /* Media query for screens narrower than 420px */
  @media screen and (min-width:360px) and (max-width: 1200px) {

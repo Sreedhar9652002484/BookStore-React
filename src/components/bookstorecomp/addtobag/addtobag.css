@@ -1,0 +1,25 @@
+.addtobag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    width: 11vw;
+    height: 5vh;
+}
+
+#plus{
+    width: 3vw;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: 1px solid #cccc;
+    cursor: pointer;
+}
+#one{
+    width: 3.5vw;
+    height: 4vh;
+    font-size: 1.2rem;
+    border: 1px solid #cccc;
+    cursor: pointer;
+
+}

@@ -2,7 +2,21 @@ import {Avatar, Button, Icon, IconButton,TextField, Typography } from '@mui/mate
 import image from '../../../assests/bhagavadbook.jpeg'
 import csss from'./bookdetails.css'
 import { Link } from 'react-router-dom'
-export const BookDetails = () => {
+import { useEffect, useState } from 'react'
+import { AddToBag } from '../addtobag/addtobag'
+export const BookDetails = ({getallbooks}) => {
+    const[addtobag, setAddtoBag]=useState(false)
+    
+
+
+    useEffect(()=>{
+        console.log("boobks", getallbooks)
+    })
+
+    const handleAddtoBag=()=>{
+        setAddtoBag(true)
+    }
+
     return (
 
         <><div className='homelink'>
@@ -24,15 +38,15 @@ export const BookDetails = () => {
             <div className='geeta' >
                 <img  id='geeta' src={image} alt="" />
             </div>
-            <div className='button2'>
-            <Button id='add'>ADD TO BAG</Button>
+            <div className='button2'> {addtobag? <AddToBag/>:
+            <Button id='add' onClick={handleAddtoBag}  >ADD TO BAG</Button>}
             <Button id='wishlist'><span id="heart">&#x2665; </span> WISHLIST</Button>
             </div>
             </div>
             <div className='typography'>
                 <Typography gutterBottom variant="h5" component="div">
-                    <span id='title1'>Bhagavadh Geeta</span>
-                    <p id='spantext1'>by Bhakthi Vedant Swami Prabhupada</p>
+                    <span id='title1'>{getallbooks}</span>
+                    <p id='spantext1'>{getallbooks}</p>
                     <p id='star1'>4.5 <span> &#9733;</span></p>
                     <p id='price1'>Rs.499 < span id='rate'>Rs.699</span></p>
                     <hr id='line'/>

@@ -64,10 +64,10 @@ export default function Navbar() {
     
       const navigate = useNavigate();
       const SignoutHandler=()=>{
-        // if(localStorage.key){
-        //   localStorage.removeItem('token');
+        if(localStorage.key){
+        localStorage.removeItem('token');
           navigate('/')
-        //}
+        }
       }
       const navigatecart=useNavigate();
       const handlecart=()=>{

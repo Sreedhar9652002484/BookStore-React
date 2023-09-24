@@ -40,9 +40,7 @@ export const Cart=()=>{
                 </div>
                
                 </div>
-                <div onClick={handleplaceOrder}><button id="placebutton">PLACE ORDER</button></div>
-                
-            
+                {!address?<div onClick={handleplaceOrder}><button id="placebutton">PLACE ORDER</button></div>:""}
             </div>
             {address?(<CustomerDetails handleordersummary={handleordersummary}  />):(
             <div className="address"> 
