@@ -88,6 +88,8 @@ input{
     text-decoration: line-through;
     color: gray;
     font-size: 0.8rem;
+    position: relative;
+    left: 1vh;
 }
 #remove{
     background-color: white;

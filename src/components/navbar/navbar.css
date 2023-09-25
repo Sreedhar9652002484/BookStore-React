@@ -9,7 +9,6 @@
 #icon{
     color: white;
     margin-left:2.5vw;
-    
 }
 #image1{
     margin-top: 0;
@@ -39,4 +38,18 @@
     font-size: 0.8rem;
     padding-left: 2.5vw;
     margin-top: 0;
+}
+.data{
+    display: flex;
+}
+#data{
+    position: relative;
+    right: 1vw;
+    bottom: 1vh;
+    font-size: 0.7rem;
+    width: 1vw;
+    height: 2vh;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
 }

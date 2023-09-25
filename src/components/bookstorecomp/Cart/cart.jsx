@@ -3,11 +3,17 @@ import { Avatar, IconButton } from "@mui/material"
 import image from '../../../assests/bhagavadbook.jpeg'
 import stylecss from './cart.css'
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { CustomerDetails } from "../CustomerDetails/customerdetails"
 import { OrderSummary } from "../OrderSummanry/ordersummary"
+import { BookContext } from "../BookDetails/bookdetails"
+import { AddToBag } from "../addtobag/addtobag"
 
 export const Cart=()=>{
+
+
+    const selectedbook=useContext(BookContext);
+    console.log("datata", selectedbook)
 
     const [address, setAddress]=useState(false)
     const handleplaceOrder=()=>{
@@ -32,9 +38,10 @@ export const Cart=()=>{
                 <div className="geetacart">
                     <img src={image} id="imgcart" alt="image"></img>
                     <div className="paradiv">
-                    <p id="bookname">Bhagavadh Geeta</p>
-                    <p id="author">by Bhakthi Vedant Swami Prabhupada</p>
-                    <p id='price3'>Rs.499 < span id='rate2'>Rs.699</span></p>
+                    <p id="bookname">{selectedbook.bookName}</p>
+                    <p id="author">{selectedbook.author}</p>
+                    <p id='price3'>Rs.{selectedbook.price}< span id='rate2'>Rs.{selectedbook.discountPrice}</span></p>
+                    <AddToBag/>
                     {/* <div className="avatar"><Avatar>-</Avatar><input id="input2"></input><Avatar>+</Avatar> <button id="remove">Remove</button></div> */}
                     </div>
                 </div>

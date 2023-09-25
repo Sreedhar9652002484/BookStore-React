@@ -96,10 +96,13 @@
     font-weight: bold;
     
 }
-#rate1{
+#rate{
     color: gray;
     font-weight: normal;
     text-decoration: line-through;
+    font-size: 1.2rem;
+    position: relative;
+    left: 1vh;
 }
 #line{
     width: 45vw;

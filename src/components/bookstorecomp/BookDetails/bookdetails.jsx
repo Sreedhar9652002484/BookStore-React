@@ -2,23 +2,27 @@ import {Avatar, Button, Icon, IconButton,TextField, Typography } from '@mui/mate
 import image from '../../../assests/bhagavadbook.jpeg'
 import csss from'./bookdetails.css'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { AddToBag } from '../addtobag/addtobag'
-export const BookDetails = ({getallbooks}) => {
+import { Cart } from '../Cart/cart'
+
+export const BookContext=createContext();
+export const BookDetails = ({getselectedbook}) => {
     const[addtobag, setAddtoBag]=useState(false)
-    
 
-
-    useEffect(()=>{
-        console.log("boobks", getallbooks)
-    })
-
+    console.log("-----selected-----")
+        console.log(getselectedbook)
     const handleAddtoBag=()=>{
         setAddtoBag(true)
+
     }
-
+    const selectedbook={
+        bookName:getselectedbook.bookName,
+        author:getselectedbook.author,
+        price:getselectedbook.price,
+        discountPrice:getselectedbook.discountPrice
+    }
     return (
-
         <><div className='homelink'>
         <Link to='/dashboard'>Home / </Link>
         <Link >Book(01)</Link>
@@ -45,14 +49,14 @@ export const BookDetails = ({getallbooks}) => {
             </div>
             <div className='typography'>
                 <Typography gutterBottom variant="h5" component="div">
-                    <span id='title1'>{getallbooks}</span>
-                    <p id='spantext1'>{getallbooks}</p>
+                    <span id='title1'>{getselectedbook.bookName}</span>
+                    <p id='spantext1'>{getselectedbook.author}</p>
                     <p id='star1'>4.5 <span> &#9733;</span></p>
-                    <p id='price1'>Rs.499 < span id='rate'>Rs.699</span></p>
+                    <p id='price1'>Rs.{getselectedbook.discountPrice}<span id='rate'>Rs.{getselectedbook.price}</span></p>
                     <hr id='line'/>
                     <div className='bookdetails'>
                     <p id='bookdetail'><span id='dot'>&#x2022;</span> Book Detail</p>
-                    <p id='bookpara'>The Bhagavad-gita is universally renowned as the jewel of India's spiritual wisdom. Spoken by Lord Krishna, the Supreme Personality of Godhead to His intimate disciple Arjuna, the Gita's seven hundred concise verses provide a definitive guide to the science of self realization. No other philosophical or religious work reveals, in such a lucid and profound way, the nature of consciousness, the self, the universe and the Supreme.</p>
+                    <p id='bookpara'>{getselectedbook.description}</p>
                     </div>
                     <hr id='line'/>
                     <p>Customer Feedback</p>
@@ -86,6 +90,9 @@ export const BookDetails = ({getallbooks}) => {
                 </Typography>
             </div>  
             </div> 
+            <BookContext.Provider value={ addtobag? selectedbook:null} >
+                {addtobag && <Cart  />}
+            </BookContext.Provider>
         </div>
         
         </> 

@@ -15,8 +15,11 @@ export default function BookCard({getallbooks,onSelectBook}) {
   const navigate=useNavigate()
   
   const handleOnclick=()=>{
-    onSelectBook && onSelectBook(getallbooks);
-    navigate('/bookdetails')
+
+    onSelectBook(getallbooks);
+    
+    //console.log(getallbooks);
+    // navigate('/bookdetails')
    
   }
   // console.log("getallbooks", getallbooks.bookName)

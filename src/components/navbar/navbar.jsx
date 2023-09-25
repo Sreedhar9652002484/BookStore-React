@@ -9,6 +9,8 @@ import { AppBar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/ma
 import { Link, useNavigate } from 'react-router-dom';
 import { AccountCircle, Person3Outlined, PersonOutline, ShoppingCartOutlined } from '@mui/icons-material';
 import { Cart } from '../bookstorecomp/Cart/cart';
+import { Mycontext} from '../bookstorecomp/addtobag/addtobag';
+import { useContext } from 'react';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -53,7 +55,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-   
+ const data =useContext(Mycontext)
+ console.log("count",data);
+
       const [anchorEl, setAnchorEl] = React.useState(null);
       const handleClose = () => {
         setAnchorEl(null);
@@ -139,13 +143,13 @@ export default function Navbar() {
                 <MenuItem onClick={handleClose}>My Profile</MenuItem>
                 <MenuItem onClick={SignoutHandler}>SignOut</MenuItem>
               </Menu>
-              <div  className='cart'>
-              <IconButton id='icon' onClick={handlecart} > <ShoppingCartOutlined    /></IconButton>
-              
+              <div  className='cart'> 
+              <div className='data'>
+              <IconButton id='icon' onClick={handlecart} >< ShoppingCartOutlined  /></IconButton>
+              {data>=1?<p id='data'>{data}</p>:''}
+              </div>
               <span id='cart'> Cart</span> 
               </div>
-             
-              
               </Toolbar>
       </AppBar>
       
