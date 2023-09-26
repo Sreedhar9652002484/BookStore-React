@@ -11,6 +11,9 @@ import { AccountCircle, Person3Outlined, PersonOutline, ShoppingCartOutlined } f
 import { Cart } from '../bookstorecomp/Cart/cart';
 import { Mycontext} from '../bookstorecomp/addtobag/addtobag';
 import { useContext } from 'react';
+import { BookDetails } from '../bookstorecomp/BookDetails/bookdetails';
+import { CartContext } from '../bookstorecomp/context/cartcontext';
+import { NavbarContext } from '../bookstorecomp/context/navbarContext';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -54,9 +57,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
+
 export default function Navbar() {
- const data =useContext(Mycontext)
- console.log("count",data);
+ const {count} =useContext(NavbarContext)
+ console.log("count",count);
+
+ const {openCart}=useContext(CartContext);
+ console.log('open', openCart)
 
       const [anchorEl, setAnchorEl] = React.useState(null);
       const handleClose = () => {
@@ -73,15 +80,20 @@ export default function Navbar() {
           navigate('/')
         }
       }
-      const navigatecart=useNavigate();
-      const handlecart=()=>{
-        navigatecart('/cart')
-      }
+      // const navigatecart=useNavigate();
+      // const [isCartOpen, setIsCartOpen] = React.useState(false);
+      // const handlecart=()=>{
+      //   setIsCartOpen(true)
+        // console.log("cartvalue",cart)
+      
+
       const handlebook=()=>{
-        navigatecart('/dashboard')
+        // navigatecart('/dashboard')
+
       }
     return (
-        <div className='main'>
+        <div className='main'> 
+
          
         <Box  >
           <AppBar style={{display:'fixed'}}>
@@ -116,10 +128,7 @@ export default function Navbar() {
                 color="inherit"
                
               >
-            
                 <PersonOutline  />
-             
-               
               </IconButton>
               <span id='profile'> Profile</span> 
               </div>
@@ -145,17 +154,17 @@ export default function Navbar() {
               </Menu>
               <div  className='cart'> 
               <div className='data'>
-              <IconButton id='icon' onClick={handlecart} >< ShoppingCartOutlined  /></IconButton>
-              {data>=1?<p id='data'>{data}</p>:''}
+              <IconButton id='icon' onClick={openCart} >< ShoppingCartOutlined  /></IconButton>
+              {count>=1?<p id='data'>{count}</p>:''}
               </div>
+
               <span id='cart'> Cart</span> 
               </div>
               </Toolbar>
       </AppBar>
       
     </Box>
-       
-       
+    
     </div>
     );
 }

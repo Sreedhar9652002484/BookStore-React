@@ -6,14 +6,16 @@ import { Link } from "react-router-dom"
 import { useContext, useState } from "react"
 import { CustomerDetails } from "../CustomerDetails/customerdetails"
 import { OrderSummary } from "../OrderSummanry/ordersummary"
-import { BookContext } from "../BookDetails/bookdetails"
 import { AddToBag } from "../addtobag/addtobag"
+import { BookContext } from "../context/bookcontext"
+import { CartContext } from "../context/cartcontext"
 
 export const Cart=()=>{
+    
+    const {cartData}=useContext(BookContext);
+    const {closeCart}=useContext(CartContext)
+    // // console.log("datata", selectedbook)
 
-
-    const selectedbook=useContext(BookContext);
-    console.log("datata", selectedbook)
 
     const [address, setAddress]=useState(false)
     const handleplaceOrder=()=>{
@@ -26,7 +28,7 @@ export const Cart=()=>{
     return(
         <div className="cart">
             <div className="link1"> 
-                <Link to='/dashboard' >Home</Link>
+                <Link onClick={closeCart} >Home</Link>
                 <Link> / My Cart</Link>
             </div>
 
@@ -38,9 +40,9 @@ export const Cart=()=>{
                 <div className="geetacart">
                     <img src={image} id="imgcart" alt="image"></img>
                     <div className="paradiv">
-                    <p id="bookname">{selectedbook.bookName}</p>
-                    <p id="author">{selectedbook.author}</p>
-                    <p id='price3'>Rs.{selectedbook.price}< span id='rate2'>Rs.{selectedbook.discountPrice}</span></p>
+                    <p id="bookname">{cartData.bookName}</p>
+                    <p id="author">{cartData.author}</p>
+                    <p id='price3'>Rs.{cartData.discountPrice}< span id='rate2'>Rs.{cartData.price}</span></p>
                     <AddToBag/>
                     {/* <div className="avatar"><Avatar>-</Avatar><input id="input2"></input><Avatar>+</Avatar> <button id="remove">Remove</button></div> */}
                     </div>
