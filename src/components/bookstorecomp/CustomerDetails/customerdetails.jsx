@@ -6,8 +6,9 @@ import { OrderSummary } from '../OrderSummanry/ordersummary';
 export const CustomerDetails=({handleordersummary})=>{
 const[order, setOrder]=useState(false);
 const handleContinue=()=>{
-    setOrder(true);
-    handleordersummary(order)
+    console.log("continued");
+    setOrder(true)
+   handleordersummary(true);
 }
     return(
         <div className='customermain'>
@@ -37,10 +38,12 @@ const handleContinue=()=>{
             <IconButton><Radio></Radio></IconButton><span id='home'>Other</span></div>     
             </div>
             </div>
+            { order ?'':
             <div className='continue' > 
                 <Button onClick={handleContinue} id='continue'>Continue</Button>
                 
             </div>
+            }
               
         </div>
              

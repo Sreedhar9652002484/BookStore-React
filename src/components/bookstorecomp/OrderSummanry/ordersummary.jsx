@@ -5,18 +5,18 @@ import stylecss from '../Cart/cart.css'
 import style from './ordersummary.css'
 import { useNavigate } from "react-router-dom"
 
-export const OrderSummary=()=>{
+export const OrderSummary=({})=>{
 
     const navigate=useNavigate();
     const handleCheckout=()=>{
-        navigate('/ordersuccessful')
+        // navigate('/ordersuccessful')
 
     }
     return(
         <div className="cart1">
             <div className="link2">              
             </div>
-            <div className="mycart">
+            <div className="mycart1">
                 <div className="location3"><p id="mycarttext2">Order Summary</p>
                 </div>
                 <div className="buttonimg">
@@ -30,7 +30,7 @@ export const OrderSummary=()=>{
                 </div>
                
                 </div>
-                <div ><button onClick={handleCheckout} id="placebutton">CHECKOUT</button></div>
+                <div ><button onClick={handleCheckout} id="placebutton1">CHECKOUT</button></div>
                 </div>
         </div>
     )

@@ -5,33 +5,23 @@ import { Link } from 'react-router-dom'
 import { createContext, useContext, useEffect, useState } from 'react'
 import { AddToBag } from '../addtobag/addtobag'
 import { Cart } from '../Cart/cart'
-import { NavbarContext } from '../../navbar/navbar'
-import { AddToCart } from '../../../services/userservices'
 import { BookContext } from '../context/bookcontext'
-
+import { AddQuantity, AddToCart } from '../../../services/bookservice'
+import { NavbarContext } from '../context/navbarContext'
 
 export const BookDetails = ({ getselectedbook, homeLink, addToCart,children }) => {
     const [addtobag, setAddtoBag] = useState(false)
-
     console.log("-----selected-----")
     console.log(getselectedbook)
-
-    const selectedbook = {
-        bookName: getselectedbook.bookName,
-        author: getselectedbook.author,
-        price: getselectedbook.price,
-        discountPrice: getselectedbook.discountPrice
-    }
-
-    const {handleCartData}=useContext(BookContext)
+    const {getProductId}=useContext(NavbarContext)
     const handleAddtoBag = async () => {
         setAddtoBag(true)
         const product_id = getselectedbook._id
-        let response = await AddToCart(product_id)
-        console.log("cart response", response)
-        handleCartData(selectedbook);
-        console.log("-------------", selectedbook)
-        addToCart()
+        const [response] = await Promise.all([
+            AddToCart(product_id),
+            getProductId(product_id)
+            ]);
+        console.log("-------------", response)
     }
     return (
         <div>
@@ -41,8 +31,6 @@ export const BookDetails = ({ getselectedbook, homeLink, addToCart,children }) =
             </div>
             <div className='flex'>
                 <div className='maincontainer'>
-
-
                     <div>
                         <div className='book1' >
                             <img id='book1' src={image} alt="" />
@@ -55,7 +43,7 @@ export const BookDetails = ({ getselectedbook, homeLink, addToCart,children }) =
                         <div className='geeta' >
                             <img id='geeta' src={image} alt="" />
                         </div>
-                        <div className='button2'> {addtobag ? <AddToBag /> :
+                        <div className='button2'> {addtobag ? <AddToBag  /> :
                             <Button id='add' onClick={handleAddtoBag}  >ADD TO BAG</Button>}
                             <Button id='wishlist'><span id="heart">&#x2665; </span> WISHLIST</Button>
                         </div>
@@ -103,9 +91,6 @@ export const BookDetails = ({ getselectedbook, homeLink, addToCart,children }) =
                         </Typography>
                     </div>
                 </div>
-                {/* <BookContext.Provider value={addtobag ? selectedbook : null} >
-                    {children}
-                </BookContext.Provider> */}
             </div>
         </div>
     )

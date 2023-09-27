@@ -21,9 +21,8 @@ export const Dashboard = () => {
     }
     useEffect(() => {
         fetchBooks();
-        showCartBooks();
-    }, [])
 
+    }, [])
     const showAllBooks = () => {
         return getallBooks.map((book) => (
 
@@ -38,54 +37,20 @@ export const Dashboard = () => {
     }
     const [home, setHome] = useState(true)
     const handleHome = () => {
-        // setHome(true);
         setSelected(null)
     }
-
     const { cartIsOpen } = useContext(CartContext)
     console.log('dahh', cartIsOpen)
-
-    const { cartData } = useContext(BookContext)
-    const [cart, setCart] = useState([]);
-    const [iscartClicked, setClicked] = useState(false)
-
-    const addToCart = () => {
-        setClicked(true);
-        if (iscartClicked) {
-            setCart([...cart, cartData])
-        }
-        else {
-            return null
-        }
-    };
-    const showCartBooks = () => {
-        if (cart != null) {
-            return (cart?.map((cartBook) => (
-                <div key={cartBook._id}>
-                    <Cart />
-                    {console.log("carttt@@@@@@@@@@@@@@@@@@@@@@@@@@", cartBook)}
-                </div>
-            )
-            ))
-        } else {
-            <h1>Your Cart Is Empty</h1>
-        }
-    }
-
-    console.log("cart", cart);
-
     console.log("selectBook (state after update):", Book);
     return (
 
         <div>
-            {cartIsOpen ? showCartBooks() :
+            {cartIsOpen ? <Cart /> :
                 <div >
                     {home ?
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <div style={{ width: '70vw', display: 'flex', flexWrap: 'wrap', gap: '1.5vw', rowGap: '5vh' }}>
-
-                                {Book ? <BookDetails getselectedbook={Book} homeLink={handleHome} addToCart={addToCart} /> : showAllBooks()}
-
+                                {Book ? <BookDetails getselectedbook={Book} homeLink={handleHome} /> : showAllBooks()}
                             </div>
                         </div>
                         : " "}
