@@ -80,13 +80,7 @@ export default function Navbar() {
           navigate('/')
         }
       }
-      // const navigatecart=useNavigate();
-      // const [isCartOpen, setIsCartOpen] = React.useState(false);
-      // const handlecart=()=>{
-      //   setIsCartOpen(true)
-        // console.log("cartvalue",cart)
-      
-
+     
       const handlebook=()=>{
         // navigatecart('/dashboard')
 

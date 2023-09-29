@@ -59,3 +59,12 @@ export const RemoveItem = async (cartItem_id) => {
         throw error;
     }
 }
+export const CustomerDetailsEdit = async (obj) => {
+    try {
+        let response = await axios.put(`https://bookstore.incubation.bridgelabz.com/bookstore_user/edit_user`,obj,headerConfig())
+        return response;
+    }
+    catch (error) {
+        throw error;
+    }
+}

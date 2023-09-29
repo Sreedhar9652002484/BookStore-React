@@ -9,7 +9,7 @@ export const OrderSummary=({})=>{
 
     const navigate=useNavigate();
     const handleCheckout=()=>{
-        // navigate('/ordersuccessful')
+        navigate('/ordersuccessful')
 
     }
     return(

@@ -22,8 +22,9 @@ export const Router=()=>{
                 <Route exact path={'/signup'} element={<AuthRoute><Signup/></AuthRoute>}></Route>
                 <Route exact path={'/forgetpassword'} element={<ForgetPassword/>}></Route>
                 <Route exact path={'/dashboard'} element={<ProtectedRoute><Dashboard/></ProtectedRoute>}></Route>
-                {/* <Route exact path={'/bookdetails'} element={<BookDetails/>}></Route>
                 <Route path={'/ordersuccessful'} element={<OrderSuccessful/>}></Route>
+
+                {/* <Route exact path={'/bookdetails'} element={<BookDetails/>}></Route>
                 <Route path={'/cart'} element={<Cart/>}></Route> */}
             </Routes>
             </NavbarLayout>
